@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -72,9 +73,8 @@ namespace Vidly.Controllers
 
             ViewBag.Title = "Edit Movie";
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = genres
             };
 
@@ -87,12 +87,15 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                movie = new Movie();
-                return View("MovieForm", movie);
+                var viewModel = new MovieFormViewModel(movie);
+                return View("MovieForm", viewModel);
             }
 
             if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Today;
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);

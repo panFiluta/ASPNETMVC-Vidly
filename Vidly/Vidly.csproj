@@ -164,6 +164,10 @@
     <Compile Include="Migrations\202401250738484_PopulateMovies.designer.cs">
       <DependentUpon>202401250738484_PopulateMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402061545434_ViewModelsForMovieAndCustomer.cs" />
+    <Compile Include="Migrations\202402061545434_ViewModelsForMovieAndCustomer.designer.cs">
+      <DependentUpon>202402061545434_ViewModelsForMovieAndCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -280,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401250738484_PopulateMovies.resx">
       <DependentUpon>202401250738484_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402061545434_ViewModelsForMovieAndCustomer.resx">
+      <DependentUpon>202402061545434_ViewModelsForMovieAndCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
